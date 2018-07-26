@@ -8,7 +8,7 @@ router.get('/', function (req, res, next) {
     res.render('index', {title: 'Express'});
 });
 
-router.post('/web', controller.web);
+router.post('web', controller.web);
 
 
 module.exports = router;
