@@ -1,7 +1,7 @@
 const exec = require('child_process').exec;
 
 function web(req, res) {
-    let command = `cd .. && ls`;
+    let command = `cd ../${req.body.repository.name} && git pull`;
     exec(command, (err, out) => {
         if (err) return res.status(500).json({error: err});
         return res.status(200).json({content: out});
